@@ -11,8 +11,8 @@ export class FortniteFacade {
 
     startGame(): void {
 
-        console.log(`==== FORTNITE PATTERNS ====
-`);
+        console.log(`==== FORTNITE PATTERNS ====`);
+
         // SKIN BASE
         const skinBase = new Skin("Skin Base", 100, 100);
 
@@ -23,8 +23,7 @@ export class FortniteFacade {
         const skullTrooper = new Skin("Skull Trooper", 100, 100);
         const superheroe = new Skin("Superhéroe", 100, 100);
 
-        console.log(`==== CLONANDO SKINS ====
-`);
+        console.log(`==== CLONANDO SKINS ====`);
 
         console.log("Clonando Aura...");
         const auraClone = duplicateSkin(aura);
@@ -65,7 +64,7 @@ export class FortniteFacade {
         builder3.setSkin(superheroeClone);
         builder3.setPico("Pico Estrella");
         builder3.setPlaneador("Crucero Coral");
-        builder3.setGesto("Billy Bounce");
+        builder3.setGesto("Risa de Burro");
         builder3.setWeapon(sniper);
 
         const superheroeLoadout = builder3.getResult();
@@ -76,11 +75,7 @@ export class FortniteFacade {
 
 
         // DECORATOR
-        console.log(`
-==========================================
-      BENEFICIOS DEL JUGADOR
-==========================================
-`);
+        console.log(`==== BENEFICIOS DEL JUGADOR ====`);
 
         let benefits = new BasicPlayer();
 
@@ -91,11 +86,7 @@ export class FortniteFacade {
 
 
         // STRATEGY
-        console.log(`
-==========================================
-        MODOS DE JUEGO
-==========================================
-`);
+        console.log(`\n==== MODOS DE JUEGO ====`);
 
         const player = new Player(
             "Josue",
@@ -112,11 +103,7 @@ export class FortniteFacade {
 
 
         // OBSERVER
-        console.log(`
-==========================================
-      CAMBIO DE RAREZA
-==========================================
-`);
+        console.log(`\n==== CAMBIO DE RAREZA ====`);
 
         const hud = new HUDObserver();
         const inventory = new InventoryObserver();
@@ -128,9 +115,7 @@ export class FortniteFacade {
 
         scar.changeRarity("Poco Común");
         scar.changeRarity("Rara");
-        scar.changeRarity("Épica");
         scar.changeRarity("Legendaria");
 
     }
-
 }

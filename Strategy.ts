@@ -11,7 +11,7 @@ export class BuildMode implements GameModeStrategy {
 
     startMatch(): void {
         console.log("Modo de juego: Con Construcción.");
-        console.log("El jugador puede construir estructuras durante la partida.");
+        console.log("Construcción habilitada....");
 
     }
 
@@ -22,7 +22,7 @@ export class ZeroBuildMode implements GameModeStrategy {
 
     startMatch(): void {
         console.log("Modo de juego: Sin Construcción.");
-        console.log("El jugador se enfoca únicamente en el combate.");
+        console.log("Construcción deshabilitada....");
 
     }
 
@@ -33,7 +33,7 @@ export class CreativeMode implements GameModeStrategy {
 
     startMatch(): void {
         console.log("Modo de juego: Creativo.");
-        console.log("El jugador puede crear mapas y practicar libremente.");
+        console.log("Construcción libre y creación de mapas...");
 
     }
 
@@ -55,14 +55,14 @@ export class Player {
     }
 
     startMatch(): void {
-        console.log(`\n${this.nombre} inicia una partida.`);
+        console.log(`\n${this.nombre} ha iniciado una partida.`);
         this.gameMode.startMatch();
 
     }
 
     setGameMode(gameMode: GameModeStrategy): void {
         this.gameMode = gameMode;
-        console.log(`\n${this.nombre} cambió de modo de juego.`);
+        console.log(`\n${this.nombre} selecciono un nuevo modo de juego....`);
     }
 
 }

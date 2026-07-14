@@ -12,7 +12,7 @@ export interface PlayerBenefits {
 export class BasicPlayer implements PlayerBenefits {
 
     showBenefits(): void {
-        console.log("Beneficios del jugador:");
+        console.log("\nBeneficios del jugador:");
         console.log("- Acceso al juego");
 
     }
@@ -42,7 +42,7 @@ export class BattlePassDecorator extends BenefitsDecorator {
     override showBenefits(): void {
 
         super.showBenefits();
-        console.log("- Battle Pass");
+        console.log("--> Battle Pass");
         console.log("- Recompensas Exclusivas");
         console.log("- Misiones Semanales");
 
@@ -56,8 +56,8 @@ export class CrewDecorator extends BenefitsDecorator {
     override showBenefits(): void {
 
         super.showBenefits();
-        console.log("- Fortnite Crew");
-        console.log("- 1000 Pavos");
+        console.log("--> Fortnite Crew");
+        console.log("- 800 Pavos");
         console.log("- Skin Mensual");
 
     }

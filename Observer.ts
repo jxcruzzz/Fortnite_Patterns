@@ -20,9 +20,6 @@ export class Weapon {
     subscribe(observer: Observer): void {
 
         this.observers.push(observer);
-
-        console.log("Se agregó un observador.");
-
     }
 
     unsubscribe(observer: Observer): void {
@@ -30,27 +27,13 @@ export class Weapon {
         const index = this.observers.indexOf(observer);
 
         if (index != -1) {
-
             this.observers.splice(index, 1);
-
-            console.log("Se eliminó un observador.");
-
         }
-
     }
 
     changeRarity(newRarity: string): void {
 
         this.rareza = newRarity;
-
-        console.log(`
-==================================
-CAMBIO DE RAREZA
-==================================
-
-${this.nombre} ahora es ${this.rareza}.
-`);
-
         this.notify();
 
     }
@@ -69,33 +52,22 @@ ${this.nombre} ahora es ${this.rareza}.
 export class HUDObserver implements Observer {
 
     update(weaponName: string, rarity: string): void {
-
-        console.log(`HUD actualizado:
-${weaponName} ahora es ${rarity}.`);
-
+        console.log(`HUD actualizado: ${weaponName} ahora es ${rarity}.`);
     }
-
 }
 
 // Concrete Observer: Inventario
 export class InventoryObserver implements Observer {
 
     update(weaponName: string, rarity: string): void {
-
-        console.log(`Inventario actualizado:
-${weaponName} ahora es ${rarity}.`);
-
+        console.log(`Inventario actualizado: ${weaponName} ahora es ${rarity}.`);
     }
-
 }
 
 // Concrete Observer: Registro del juego
 export class MatchLogObserver implements Observer {
 
     update(weaponName: string, rarity: string): void {
-
-        console.log(`Registro:
-Cambio de rareza detectado en ${weaponName}.`);
+        console.log(`Registro: Cambio de rareza detectado en ${weaponName}.`);
     }
-
 }
